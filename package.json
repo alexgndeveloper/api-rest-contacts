@@ -1,0 +1,21 @@
+{
+  "name": "api-rest-contacts",
+  "version": "1.0.0",
+  "description": "Proyecto de API REST CRUD de Contactos con Node.js y Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alejandro Garcia",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "mongoose": "^5.13.14"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
