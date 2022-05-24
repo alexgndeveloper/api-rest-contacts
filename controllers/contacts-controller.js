@@ -52,13 +52,14 @@ function read_contacts(req, res) {
       });
     }
 
-    return res.status(200).json({
-      // error: false,
-      // message: 'Success',
-      // data: contacts,
-      // code: 10
-      result
-    });
+    // return res.status(200).json({
+    //   error: false,
+    //   message: 'Success',
+    //   data: result,
+    //   code: 10
+    // });
+
+    return res.status(200).json(result);
   });
 }
 
