@@ -5,16 +5,16 @@ const Schema = mongoose.Schema;
 const contactSchema = new Schema(
   {
     name: { type: String, required: [true, 'El nombre de la persona es obligatorio'] },
-    surname: { type: String, required: false },
+    surname: { type: String, required: [true, 'El apellido de la persona es obligatorio'] },
     phone: { type: String, required: false },
     cellphone: { type: String, required: [true, 'El número de teléfono es obligatorio'] },
     email: { type: String, required: false },
     address: [
       {
-        direction: { type: String, required: false },
-        number: { type: Number, required: false },
-        floor: { type: String, required: false },
-        province: { type: String, required: false }
+        direction: { type: String, required: [true , 'La dirección es obligatoria'] },
+        number: { type: Number, required: [true , 'El número es obligatorio'] },
+        floor: { type: String, required: [true , 'El piso es obligatorio'] },
+        province: { type: String, required: [true , 'La provincia es obligatoria'] }
       }
     ]
   },

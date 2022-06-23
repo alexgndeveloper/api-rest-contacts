@@ -1,4 +1,4 @@
-const Contact = require('../models/contacts-model');
+const Contact = require("../models/contacts-model");
 
 /**
  * Metodo add_contacts. Añadimos el contacto recibido en la Peticion, si no es un error.
@@ -12,7 +12,7 @@ function add_contacts(req, res) {
     phone: req.body.phone,
     cellphone: req.body.cellphone,
     email: req.body.email,
-    address: req.body.address
+    address: req.body.address,
   });
 
   contact.save((error, result) => {
@@ -21,7 +21,7 @@ function add_contacts(req, res) {
         error: true,
         // message: error,
         message: `SERVER_ERROR: ${error}`,
-        code: 0
+        code: 0,
       });
     }
 
@@ -29,15 +29,15 @@ function add_contacts(req, res) {
       return res.status(400).json({
         error: true,
         message: `CLIENT_ERROR: ${error}`,
-        code: 20
+        code: 20,
       });
     }
 
     return res.status(200).json({
       error: false,
-      message: 'Success',
+      message: "Success",
       data: result,
-      code: 10
+      code: 10,
     });
   });
 }
@@ -48,7 +48,7 @@ function read_contacts(req, res) {
       return res.status(500).json({
         error: true,
         message: `SERVER_ERROR: ${error}`,
-        code: 0
+        code: 0,
       });
     }
 
@@ -72,23 +72,23 @@ function delete_contacts(req, res) {
       return res.status(500).json({
         error: true,
         message: `SERVER_ERROR: ${error}`,
-        code: 0
+        code: 0,
       });
     }
 
     if (result === null) {
       return res.status(400).json({
         error: true,
-        message: 'NOT_FOUND',
-        code: 30
+        message: "NOT_FOUND",
+        code: 30,
       });
     }
 
     return res.status(200).json({
       error: false,
-      message: 'Success',
+      message: "Success",
       data: result,
-      code: 10
+      code: 10,
     });
   });
 }
@@ -102,23 +102,23 @@ function update_contacts(req, res) {
       return res.status(500).json({
         error: true,
         message: `SERVER_ERROR: ${error}`,
-        code: 0
+        code: 0,
       });
     }
 
     if (!result) {
       return res.status(400).json({
         error: true,
-        message: 'NOT_FOUND',
-        code: 30
+        message: "NOT_FOUND",
+        code: 30,
       });
     }
 
     return res.status(200).json({
       error: false,
-      message: 'Success',
+      message: "Success",
       data: result,
-      code: 10
+      code: 10,
     });
   });
 }
@@ -127,5 +127,5 @@ module.exports = {
   read_contacts,
   add_contacts,
   delete_contacts,
-  update_contacts
+  update_contacts,
 };
